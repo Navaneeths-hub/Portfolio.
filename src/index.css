@@ -1533,37 +1533,30 @@ footer > a {
   text-transform: uppercase;
 }
 
-/* Shopper UI: 3-column clean grid for the 6 phone screens */
+/* Shopper UI: 3-column clean grid for the 6 phone screens without container boxes */
 .ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px 32px;
+  gap: 32px 24px;
   padding: 0;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-slot {
   position: relative;
   width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0d0d0d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-slot:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--1 .ui-placeholder--filled {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: auto !important;
+  background: transparent;
+  border: none;
+  padding: 0;
   inset: auto;
 }
 
@@ -1571,37 +1564,38 @@ footer > a {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  object-fit: contain;
+  border-radius: 6px;
 }
 
-/* Merchant Admin panel: stacked full-width dashboard screens */
+/* Merchant Admin panel: stacked full-width dashboard screens with clean spacing */
 .ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-grid {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;
   padding: 0;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-slot {
   position: relative;
   width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0d0d0d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.2s ease;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
-.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-slot:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-slot:nth-child(1) {
+  width: 60%;
+  max-width: 720px;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--2 .ui-placeholder--filled {
   position: relative;
   display: block;
   width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
   inset: auto;
 }
 
@@ -1609,8 +1603,7 @@ footer > a {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+  border-radius: 6px;
 }
 
 @media (max-width: 800px) {
