@@ -1509,205 +1509,108 @@ footer > a {
 
 .ui-gallery-section--shopify {
   position: relative;
-  height: 5128px;
-  padding-bottom: 0;
+  height: auto;
+  padding-bottom: 96px;
 }
 
-.ui-gallery-section--shopify .ui-screen-group,
-.ui-gallery-section--shopify .ui-screen-grid {
-  display: contents;
+.ui-gallery-section--shopify .ui-screen-group {
+  display: block;
+  margin-top: 56px;
+}
+
+.ui-gallery-section--shopify .ui-screen-group + .ui-screen-group {
+  margin-top: 80px;
 }
 
 .ui-gallery-section--shopify .ui-screen-group-label {
-  position: absolute;
-  left: 2.42%;
-  z-index: 2;
-  margin: 0;
+  display: block;
+  position: static;
+  margin: 0 0 24px 0;
+  color: #aaa9a5;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-group-label {
-  top: 265.58px;
+/* Shopper UI: 3-column clean grid for the 6 phone screens */
+.ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 32px;
+  padding: 0;
 }
 
-.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-group-label {
-  top: 1451.58px;
-}
-
-.ui-gallery-section--shopify .ui-screen-slot {
-  position: absolute;
+.ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-slot {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
   overflow: hidden;
-  max-width: none;
-  border-radius: 8px;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.ui-gallery-section--shopify .ui-placeholder--filled {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 8px;
+.ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-slot:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.ui-gallery-section--shopify .ui-screen-group--1 .ui-placeholder--filled {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: auto !important;
+  inset: auto;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--1 img {
-  position: absolute;
-  max-width: none;
-  border-radius: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
 }
 
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(1) {
-  top: 303.58px;
-  left: 2.6%;
-  width: 25.54%;
-  aspect-ratio: 295 / 481;
+/* Merchant Admin panel: stacked full-width dashboard screens */
+.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0;
 }
 
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(1)
-  img {
-  top: -1.87%;
-  left: -8.86%;
-  width: 117.39%;
-  height: 110.6%;
+.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-slot {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s ease;
 }
 
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(2) {
-  top: 303.58px;
-  left: 34.97%;
-  width: 27.27%;
-  aspect-ratio: 315 / 481;
+.ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-slot:hover {
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(2)
-  img {
-  top: -3.12%;
-  left: -11.43%;
-  width: 122.82%;
-  height: 114.97%;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(3) {
-  top: 301.58px;
-  left: 68.39%;
-  width: 26.58%;
-  aspect-ratio: 307 / 648;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(3)
-  img {
-  top: -2.93%;
-  left: -7.25%;
-  width: 114.49%;
-  height: 106.79%;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(4) {
-  top: 842.58px;
-  left: 2.42%;
-  width: 26.32%;
-  aspect-ratio: 304 / 470;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(4)
-  img {
-  top: -3.47%;
-  left: -13.16%;
-  width: 125.33%;
-  height: 115.87%;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(5) {
-  top: 840.58px;
-  left: 34.97%;
-  width: 27.53%;
-  aspect-ratio: 318 / 475;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(5)
-  img {
-  top: -2.98%;
-  left: -11.32%;
-  width: 122.96%;
-  height: 116.91%;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(6) {
-  top: 1001.58px;
-  left: 68.39%;
-  width: 27.1%;
-  aspect-ratio: 313 / 510;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--1
-  .ui-screen-slot:nth-child(6)
-  img {
-  top: -1.76%;
-  left: -8.33%;
-  width: 117.29%;
-  height: 110.59%;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--2
-  .ui-screen-slot:nth-child(1) {
-  top: 1491.58px;
-  left: 2.34%;
-  width: 59.21%;
-  aspect-ratio: 684 / 412;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--2
-  .ui-screen-slot:nth-child(2) {
-  top: 1967.58px;
-  left: 2.51%;
-  width: 92.73%;
-  aspect-ratio: 1071 / 646;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--2
-  .ui-screen-slot:nth-child(3) {
-  top: 2733.58px;
-  left: 2.34%;
-  width: 93.07%;
-  aspect-ratio: 1075 / 648;
-}
-
-.ui-gallery-section--shopify
-  .ui-screen-group--2
-  .ui-screen-slot:nth-child(4) {
-  top: 3441.58px;
-  left: 2.51%;
-  width: 93.42%;
-  aspect-ratio: 1079 / 1497;
+.ui-gallery-section--shopify .ui-screen-group--2 .ui-placeholder--filled {
+  position: relative;
+  display: block;
+  width: 100%;
+  inset: auto;
 }
 
 .ui-gallery-section--shopify .ui-screen-group--2 img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  border-radius: 12px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 @media (max-width: 800px) {
@@ -2080,51 +1983,27 @@ footer > a {
 
   .ui-gallery-section--shopify {
     height: auto;
-    padding-bottom: 96px;
-  }
-
-  .ui-gallery-section--shopify .ui-screen-group {
-    display: block;
+    padding-bottom: 64px;
   }
 
   .ui-gallery-section--shopify .ui-screen-group + .ui-screen-group {
-    margin-top: 72px;
+    margin-top: 48px;
   }
 
-  .ui-gallery-section--shopify .ui-screen-grid {
-    display: grid;
+  .ui-gallery-section--shopify .ui-screen-group--1 .ui-screen-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .ui-gallery-section--shopify .ui-screen-group-label,
-  .ui-gallery-section--shopify .ui-screen-slot {
-    position: static;
-    width: auto;
-    margin: 0;
+  .ui-gallery-section--shopify .ui-screen-group--2 .ui-screen-grid {
+    gap: 32px;
   }
 
-  .ui-gallery-section--shopify .ui-screen-group-label {
-    margin-bottom: 22px;
-  }
-
-  .ui-gallery-section--shopify .ui-screen-slot {
-    aspect-ratio: auto !important;
-  }
-
-  .ui-gallery-section--shopify .ui-placeholder--filled {
-    position: relative;
-    inset: auto;
-  }
-
-  .ui-gallery-section--shopify .ui-screen-group--1 .ui-placeholder--filled {
-    aspect-ratio: 3 / 4.8 !important;
-  }
-
-  .ui-gallery-section--shopify .ui-screen-group--1 img {
-    top: 0;
-    left: 0;
+  .ui-gallery-section--shopify .ui-screen-group--1 img,
+  .ui-gallery-section--shopify .ui-screen-group--2 img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
   }
 
   .ui-screen-slot--wide {
