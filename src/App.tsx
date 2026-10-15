@@ -568,8 +568,18 @@ function ExperienceCentreCaseContent() {
         title="UI components for the Experience Center."
         screens={[
           {
-            label: "Life-sized showroom experience",
-            type: "phone",
+            label: "Try-on intake",
+            type: "portrait",
+            image: "assets/figma/centre/card-1.png",
+          },
+          {
+            label: "Garment discovery",
+            type: "portrait",
+            image: "assets/figma/centre/card-2.png",
+          },
+          {
+            label: "Look confirmation",
+            type: "portrait",
             image: "assets/figma/centre/1deee.png",
           },
         ]}
