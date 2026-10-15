@@ -30,7 +30,6 @@ const projects: Project[] = [
       "A complete plugin connecting a high-converting shopper widget with a zero-code merchant management platform.",
     discipline: "Product Design",
     image: "assets/figma/shopify/ce9bd.png",
-    imageBase: "assets/figma/shopify/71583.png",
     imageAlt: "Tuck virtual try-on displayed on a phone held in hand",
     theme: "project-card--blue",
     introduction:
@@ -78,7 +77,6 @@ const projects: Project[] = [
       "A phygital try-on system combining a 21-inch portrait kiosk, computer vision, and a seamless retail handoff.",
     discipline: "Lead Product Design",
     image: "assets/figma/kiosk/9f71b.png",
-    imageBase: "assets/figma/kiosk/1a8c0.png",
     imageAlt: "Tuck in-store portrait kiosk",
     theme: "project-card--mono",
     introduction:
@@ -173,8 +171,8 @@ const projects: Project[] = [
     description:
       "A 27-inch touch and RFID ecosystem that turns physical garment selections into an interactive styling session.",
     discipline: "Lead Product Design",
-    image: "assets/figma/kiosk/4a3b0.png",
-    imageAlt: "RFID kiosk interface for selecting and pairing garments",
+    image: "assets/figma/rfid/rfid-kiosk-thumbnail.jpg",
+    imageAlt: "Tuck RFID in-store kiosk stand",
     theme: "project-card--rfid",
     introduction:
       "The RFID kiosk brings the speed of e-commerce into physical apparel retail, helping shoppers organize garments, compare complete outfits, and move confidently toward a fitting room.",

@@ -230,11 +230,26 @@ img {
   transform: scale(1.025);
 }
 
-.project-card--blue img {
-  object-position: center 38%;
+.project-card--blue {
+  background: #c4c4c4;
 }
 
-.project-card--mono img {
+.project-card--blue.project-card img,
+.case-image.project-card--blue img {
+  object-fit: contain;
+  padding: clamp(20px, 3.5vw, 40px) 0;
+  object-position: center;
+}
+
+.project-card--mono {
+  background: #f6f6f8;
+}
+
+.project-card--mono.project-card img,
+.case-image.project-card--mono img {
+  object-fit: contain;
+  padding: clamp(24px, 4vw, 48px) 0;
+  object-position: center;
   filter: grayscale(1) contrast(1.04);
 }
 
@@ -243,12 +258,12 @@ img {
 }
 
 .project-card--rfid {
-  background: #111412;
+  background: #f9fafc;
 }
 
 .project-card--rfid img,
 .case-image.project-card--rfid img {
-  padding: clamp(32px, 5vw, 76px);
+  padding: clamp(24px, 4vw, 48px) 0;
   object-fit: contain;
 }
 
