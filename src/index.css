@@ -190,7 +190,8 @@ img {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-  white-space: nowrap;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .project-meta p {
@@ -239,6 +240,21 @@ img {
 
 .project-card--warm img {
   object-position: center 52%;
+}
+
+.project-card--rfid {
+  background: #111412;
+}
+
+.project-card--rfid img,
+.case-image.project-card--rfid img {
+  padding: clamp(32px, 5vw, 76px);
+  object-fit: contain;
+}
+
+.rfid-case .ui-placeholder--filled,
+.rfid-case .ui-placeholder--filled img {
+  border-radius: 6px;
 }
 
 .view-project {
@@ -1526,6 +1542,34 @@ footer > a {
   border-radius: 8px;
 }
 
+.rfid-case .ui-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 24px;
+  padding: 0;
+}
+
+.rfid-case .ui-screen-slot {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.rfid-case .ui-placeholder--filled {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.rfid-case .ui-screen-slot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .ui-gallery-section--shopify {
   position: relative;
   height: auto;
@@ -2274,7 +2318,8 @@ footer > a {
     gap: 16px;
   }
 
-  .experience-case .ui-screen-grid {
+  .experience-case .ui-screen-grid,
+  .rfid-case .ui-screen-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }

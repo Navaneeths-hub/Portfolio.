@@ -166,6 +166,53 @@ const projects: Project[] = [
     outcome:
       "The concept turns an abstract technology into a memorable physical journey—giving every visitor space to explore, understand, and imagine how virtual try-on could work for them.",
   },
+  {
+    slug: "rfid-in-store-kiosk",
+    year: "2024–2025",
+    title: "Tuck RFID In-Store Kiosk",
+    description:
+      "A 27-inch touch and RFID ecosystem that turns physical garment selections into an interactive styling session.",
+    discipline: "Lead Product Design",
+    image: "assets/figma/kiosk/4a3b0.png",
+    imageAlt: "RFID kiosk interface for selecting and pairing garments",
+    theme: "project-card--rfid",
+    introduction:
+      "The RFID kiosk brings the speed of e-commerce into physical apparel retail, helping shoppers organize garments, compare complete outfits, and move confidently toward a fitting room.",
+    challenge:
+      "The experience had to respond instantly to physical garments, remain legible in a distracting public environment, and work comfortably across a wide range of standing and seated reach zones.",
+    role: [
+      "Physical-digital ecosystem",
+      "Kiosk touch UI/UX",
+      "RFID spatial interaction",
+      "Physical ergonomics",
+      "Multi-item composition",
+      "Edge-case recovery",
+    ],
+    process: [
+      {
+        number: "01",
+        title: "Map the retail environment",
+        copy: "Defined the physical constraints, shopper behaviors, sensor states, and operational handoffs surrounding the kiosk.",
+      },
+      {
+        number: "02",
+        title: "Design the RFID feedback loop",
+        copy: "Connected the act of placing garments on the tray with immediate, understandable visual confirmation.",
+      },
+      {
+        number: "03",
+        title: "Build the composition canvas",
+        copy: "Created a spatial drag-and-pair model for turning separate garments into complete outfit groups.",
+      },
+      {
+        number: "04",
+        title: "Prototype graceful recovery",
+        copy: "Designed human guidance for collisions, damaged tags, inactivity, and temporary connectivity failures.",
+      },
+    ],
+    outcome:
+      "The kiosk reduces outfit compilation time while encouraging cross-category discovery and increasing fitting-room intent.",
+  },
 ]
 
 function SiteHeader({ detail = false }: { detail?: boolean }) {
@@ -244,6 +291,8 @@ function ProjectPage({ project }: { project: Project }) {
         <KioskCaseContent />
       ) : project.slug === "premium-experience-center" ? (
         <ExperienceCentreCaseContent />
+      ) : project.slug === "rfid-in-store-kiosk" ? (
+        <RfidKioskCaseContent />
       ) : (
         <>
           <section className="case-overview">
@@ -1468,6 +1517,348 @@ function ShopifyCaseContent() {
               A compelling consumer feature means little if merchant setup is
               cumbersome. Keeping store activation under three minutes was
               critical to acquisition and long-term retention.
+            </p>
+          </article>
+        </div>
+      </CaseSection>
+    </div>
+  )
+}
+
+function RfidKioskCaseContent() {
+  const metrics = [
+    {
+      metric: "Outfit compilation time",
+      outcome: "−40%",
+      value:
+        "Instant multi-tag RFID loading eliminates manual barcode-scanning friction.",
+    },
+    {
+      metric: "Cross-category attach rate",
+      outcome: "+18%",
+      value:
+        "Contextual “Complete the Look” pairings encourage discovery across categories.",
+    },
+    {
+      metric: "Fitting-room stock requests",
+      outcome: "+35%",
+      value:
+        "Real-time size availability removes uncertainty and increases trial intent.",
+    },
+  ]
+
+  const edgeCases = [
+    {
+      scenario: "Tag collision or over-scan",
+      condition: "More than 10 items placed on the tray",
+      response:
+        "A soft amber message asks the shopper to split the haul into smaller styling batches.",
+      recovery:
+        "Protects the layout and helps the reader disambiguate overlapping signals.",
+    },
+    {
+      scenario: "Unrecognized or damaged tag",
+      condition: "RFID resolves without a catalogue match",
+      response:
+        "The garment remains visible as an “Unidentified Piece” with a one-tap associate request.",
+      recovery:
+        "Keeps every valid item active without interrupting the shopper’s momentum.",
+    },
+    {
+      scenario: "Abandoned session",
+      condition: "45 seconds without shopper activity",
+      response:
+        "A radial countdown explains that the session is being cleared for privacy.",
+      recovery:
+        "Prevents outfit choices and browsing history from carrying into the next session.",
+    },
+  ]
+
+  return (
+    <div className="tuck-case rfid-case">
+      <section className="tuck-summary">
+        <p className="case-label">Executive summary</p>
+        <div>
+          <h2>Designing the phygital shopping experience.</h2>
+          <p>
+            Physical apparel shopping makes it difficult to move from browsing
+            individual garments to evaluating a complete outfit. Shoppers carry
+            armfuls of clothing, guess at size availability, and repeatedly
+            change clothes just to understand how separate pieces work
+            together.
+          </p>
+          <p>
+            As Lead Product Designer, I created a 27-inch vertical touch
+            interface connected to instant multi-tag RFID detection. The system
+            combines the tactile pleasure of physical browsing with the speed,
+            organization, and inventory intelligence shoppers expect from
+            e-commerce.
+          </p>
+        </div>
+        <div className="tuck-facts">
+          <div>
+            <span>Role</span>
+            <p>Lead Product Designer — Physical-Digital Ecosystem</p>
+          </div>
+          <div>
+            <span>Scope</span>
+            <p>
+              Kiosk UI/UX, RFID Interaction, Physical Ergonomics, Multi-Item
+              Composition
+            </p>
+          </div>
+          <div>
+            <span>Timeline</span>
+            <p>2024–2025</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="metric-section">
+        <p className="case-label">Design impact</p>
+        <div className="metric-table" role="table" aria-label="RFID kiosk impact">
+          <div className="metric-row metric-head" role="row">
+            <span>Metric</span>
+            <span>Outcome</span>
+            <span>Design driver</span>
+          </div>
+          {metrics.map((item) => (
+            <div className="metric-row" role="row" key={item.metric}>
+              <span>{item.metric}</span>
+              <strong>{item.outcome}</strong>
+              <span>{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <CaseSection
+        number="01"
+        title="Bridging physical tactility and digital fluidity"
+      >
+        <p className="section-intro">
+          Public retail interfaces must work for people who are standing,
+          carrying garments, moving quickly, and dividing their attention
+          between the screen and the store.
+        </p>
+        <div className="objective-grid">
+          <article>
+            <span>01</span>
+            <h3>Reduce cognitive load</h3>
+            <p>
+              Preserve sizes, colors, and potential pairings so shoppers do not
+              have to remember every garment they are carrying.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Make hardware legible</h3>
+            <p>
+              Translate invisible RFID activity into immediate feedback so
+              sensor delays never feel like system failure.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Design for reach variance</h3>
+            <p>
+              Place primary controls in the lower 60% of the portrait display
+              for tall, short, and wheelchair-using shoppers.
+            </p>
+          </article>
+        </div>
+      </CaseSection>
+
+      <CaseSection number="02" title="The four-stage shopper journey">
+        <p className="section-intro">
+          A fast interaction loop moves shoppers from ambient invitation to a
+          complete outfit and fitting-room handoff with minimal cognitive
+          friction.
+        </p>
+        <div className="shopper-flow" aria-label="RFID kiosk shopper journey">
+          {[
+            ["01", "Approach & ambient invitation"],
+            ["02", "Instant RFID feed"],
+            ["03", "Mix & match canvas"],
+            ["04", "Try-on & handoff"],
+          ].map(([number, label]) => (
+            <div className="flow-step" key={number}>
+              <span>{number}</span>
+              <strong>{label}</strong>
+            </div>
+          ))}
+        </div>
+
+        <div className="feature-stack">
+          <Feature
+            number="01"
+            title="Ambient invitation & spatial ergonomics"
+            items={[
+              [
+                "Calm idle state",
+                "Cinematic editorial loops and one direct instruction replace noisy promotional advertising.",
+              ],
+              [
+                "Thumb-zone hierarchy",
+                "Size selectors and actions remain in the lower 60% while the upper display is reserved for outfit visualization.",
+              ],
+            ]}
+          />
+          <Feature
+            number="02"
+            title="Instant multi-tag RFID feed"
+            items={[
+              [
+                "Zero-latency confirmation",
+                "Garment cards slide upward like physical receipts as soon as items touch the scanner tray.",
+              ],
+              [
+                "Smart stacking",
+                "Larger batches automatically organize into tops, bottoms, and outerwear instead of becoming an overwhelming raw grid.",
+              ],
+            ]}
+          />
+          <Feature
+            number="03"
+            title="Tactile mix-and-match canvas"
+            items={[
+              [
+                "Spatial drag-and-pair",
+                "Dragging a top over a bottom snaps both into an outfit group and updates color-coordination guidance in real time.",
+              ],
+              [
+                "Contextual size matrices",
+                "A lightweight bottom sheet shows live XS–XXL availability across the sales floor, backstock, and sold-out states.",
+              ],
+            ]}
+          />
+          <Feature
+            number="04"
+            title="Fitting-room and mobile continuity"
+            items={[
+              [
+                "Associate handoff",
+                "A shopper assigns the look to a fitting-room number and dispatches the pick list to a staff handheld.",
+              ],
+              [
+                "QR session transfer",
+                "The complete canvas can move into the shopper’s mobile browser without losing item groups or sizes.",
+              ],
+            ]}
+          />
+        </div>
+      </CaseSection>
+
+      <UIScreenGallery
+        title="A composition interface built for fast standing interactions."
+        screens={[
+          {
+            label: "Ambient invitation",
+            type: "portrait",
+            image: "assets/figma/rfid/ambient-invitation.jpg",
+          },
+          {
+            label: "Look review and confirmation",
+            type: "portrait",
+            image: "assets/figma/rfid/look-confirmation.jpg",
+          },
+          {
+            label: "Processing garments",
+            type: "portrait",
+            image: "assets/figma/rfid/processing-look.jpg",
+          },
+          {
+            label: "Add to cart",
+            type: "portrait",
+            image: "assets/figma/rfid/add-to-cart.jpg",
+          },
+          {
+            label: "Session complete and data deletion",
+            type: "portrait",
+            image: "assets/figma/rfid/session-complete.jpg",
+          },
+        ]}
+      />
+
+      <CaseSection
+        number="03"
+        title="Physical edge cases and graceful recovery"
+      >
+        <p className="section-intro">
+          Hardware errors are translated into human guidance that protects the
+          shopper’s progress instead of exposing technical codes or dead ends.
+        </p>
+        <div className="failure-table rfid-failure-table">
+          {edgeCases.map((edgeCase) => (
+            <article key={edgeCase.scenario}>
+              <div>
+                <span>Scenario</span>
+                <strong>{edgeCase.scenario}</strong>
+              </div>
+              <div>
+                <span>Trigger</span>
+                <p>{edgeCase.condition}</p>
+              </div>
+              <div>
+                <span>UX response</span>
+                <p>{edgeCase.response}</p>
+              </div>
+              <div>
+                <span>Recovery value</span>
+                <p>{edgeCase.recovery}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </CaseSection>
+
+      <CaseSection number="04" title="Systemic design and hardware constraints">
+        <div className="service-blueprint">
+          <article>
+            <span>01</span>
+            <h3>Immersive locked shell</h3>
+            <p>
+              Browser chrome, system gestures, and navigation bars remain
+              suppressed so shoppers cannot accidentally leave the kiosk
+              experience.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>High-contrast touch system</h3>
+            <p>
+              Typography and touch areas maintain standing-distance legibility
+              under changing track lighting and screen glare.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Local edge caching</h3>
+            <p>
+              Catalogue imagery and local inventory remain available through
+              temporary Wi-Fi interruptions without layout stutter.
+            </p>
+          </article>
+        </div>
+      </CaseSection>
+
+      <CaseSection number="05" title="Key phygital design takeaways">
+        <div className="takeaway-list">
+          <article>
+            <span>01</span>
+            <h3>Physical gestures should mirror digital feedback.</h3>
+            <p>
+              Connecting the act of dropping clothes on a tray with immediate
+              upward card motion creates a clear sense of physical-digital
+              continuity.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Design for environmental distraction.</h3>
+            <p>
+              Every core interaction—from scan, to pair, to try-on—must remain
+              understandable and achievable in fewer than three taps.
             </p>
           </article>
         </div>
