@@ -166,10 +166,10 @@ const projects: Project[] = [
   },
   {
     slug: "rfid-in-store-kiosk",
-    year: "2024–2025",
+    year: "2026",
     title: "Tuck RFID In-Store Kiosk",
     description:
-      "A 27-inch touch and RFID ecosystem that turns physical garment selections into an interactive styling session.",
+      "A 21-inch touch and RFID ecosystem that turns physical garment selections into an interactive styling session.",
     discipline: "Lead Product Design",
     image: "assets/figma/rfid/rfid-kiosk-thumbnail.jpg",
     imageAlt: "Tuck RFID in-store kiosk stand",
@@ -235,7 +235,13 @@ function SiteHeader({ detail = false }: { detail?: boolean }) {
           <a href="#work">All work ←</a>
         ) : (
           <>
-            <a href="mailto:n8089193972@gmail.com">Email ↗</a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=n8089193972@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email ↗
+            </a>
             <a
               href={assetUrl("resume.pdf")}
               target="_blank"
@@ -1586,7 +1592,7 @@ function RfidKioskCaseContent() {
             together.
           </p>
           <p>
-            As Lead Product Designer, I created a 27-inch vertical touch
+            As Lead Product Designer, I created a 21-inch vertical touch
             interface connected to instant multi-tag RFID detection. The system
             combines the tactile pleasure of physical browsing with the speed,
             organization, and inventory intelligence shoppers expect from
@@ -1607,7 +1613,7 @@ function RfidKioskCaseContent() {
           </div>
           <div>
             <span>Timeline</span>
-            <p>2024–2025</p>
+            <p>2026</p>
           </div>
         </div>
       </section>
@@ -2047,7 +2053,11 @@ function HomePage() {
 
       <footer id="contact">
         <p>Hiring for your design team?</p>
-        <a href="mailto:n8089193972@gmail.com">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=n8089193972@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Let&apos;s talk about how I can add value ↗
         </a>
         <div className="footer-meta">

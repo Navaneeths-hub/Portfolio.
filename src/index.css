@@ -230,7 +230,8 @@ img {
   transform: scale(1.025);
 }
 
-.project-card--blue {
+.project-card--blue,
+.case-image.project-card--blue {
   background: #c4c4c4;
 }
 
@@ -241,7 +242,8 @@ img {
   object-position: center;
 }
 
-.project-card--mono {
+.project-card--mono,
+.case-image.project-card--mono {
   background: #f6f6f8;
 }
 
@@ -257,7 +259,8 @@ img {
   object-position: center 52%;
 }
 
-.project-card--rfid {
+.project-card--rfid,
+.case-image.project-card--rfid {
   background: #f9fafc;
 }
 
