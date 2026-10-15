@@ -1,0 +1,11 @@
+{
+  "title": "Navaneeth Mohan — Product Designer",
+  "description": "Portfolio of Navaneeth Mohan, a product designer crafting thoughtful digital and physical experiences.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
