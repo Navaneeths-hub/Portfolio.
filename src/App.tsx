@@ -2031,7 +2031,6 @@ function HomePage() {
                 src={assetUrl(project.image)}
                 alt={project.imageAlt}
               />
-              <span className="view-project">View project ↗</span>
             </a>
           </article>
         ))}
